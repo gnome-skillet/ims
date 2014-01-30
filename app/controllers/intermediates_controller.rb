@@ -20,7 +20,7 @@ class IntermediatesController < ApplicationController
     @intermediate = @bill_of_material.intermediates.build(intermediate_params)
 
     if @intermediate.save
-      redirect_to bill_of_materials_path(@bill_of_material), notice: "Intermediate #{@intermediate.material_description} added to BOM for #{@bill_of_material.description}."
+      redirect_to bill_of_materials_path(@bill_of_material), notice: "Intermediate #{@intermediate.material_description} added to BOM for #{@bill_of_material.material.description}."
     else
       render action: 'new'
     end
