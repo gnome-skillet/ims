@@ -1,0 +1,16 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing Intermediate
+
+= form_tag bill_of_material_intermediate_path(@bill_of_material,@intermediate), :method => :put do
+
+  = label :intermediate, :material_id, 'Material Number'
+  = collection_select(:intermediate, :material_id, Material.all, :id, :description, :prompt => true)
+
+  = label :intermediate, :units, 'Units of Measure'
+  = text_field :intermediate, 'units' 
+
+  = label :intermediate, :amount, 'Required Amount'
+  = number_field :intermediate, 'amount' 
+
+  = submit_tag 'Update Intermediate Info'

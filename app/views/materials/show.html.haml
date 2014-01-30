@@ -1,0 +1,32 @@
+-# in app/views/materials/show.html.haml
+
+%h2 Details about #{@material.smn}
+
+%ul#details
+  %li
+    Material Number:
+    = @material.smn
+  %li
+    Description:
+    = @material.description
+  %li
+    Disposition:
+    = @material.disposition
+
+%table#material.catalogs
+  %thead
+    %tr
+      %th Catalog Number 
+      %th Vendor ID 
+      %th Count
+  %tbody
+    - @material.catalogs.each do |catalog|
+      %tr
+        %td= catalog.partnumber # change partnumber to catalog number
+        
+        %td= catalog.count
+
+= link_to 'Catalog', catalogs_path
+= link_to 'Edit', edit_material_path(@material)
+= button_to 'Delete', material_path(@material), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to material list', materials_path

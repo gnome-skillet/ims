@@ -1,0 +1,2 @@
+module BillOfMaterialHelper
+end

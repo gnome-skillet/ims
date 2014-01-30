@@ -1,0 +1,17 @@
+-#  This file is app/views/catalogs/index.html.haml
+%h1 Bill Of Materials 
+
+%table#bill_of_materials
+  %thead
+    %tr
+      %th Material 
+  %tbody
+    - @bill_of_materials.each do |bill_of_material|
+      %tr
+        %td= link_to "#{bill_of_material.material_description}", materials_path{bill_of_material.material_id}
+        %td= link_to 'Show', bill_of_material_path(bill_of_material)
+        %td= link_to 'Edit', edit_bill_of_material_path(bill_of_material)
+        %td= link_to 'Delete', bill_of_material, method: :delete, data: {confirm: 'Are you sure?'}
+
+= link_to 'Add new Bill Of Material', new_bill_of_material_path
+

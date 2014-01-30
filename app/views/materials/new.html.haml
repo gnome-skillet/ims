@@ -1,0 +1,14 @@
+%h1 Create New Material
+
+= form_tag materials_path do
+
+  = label :material, :smn, 'Material Number'
+  = text_field :material, 'smn'
+
+  = label :material, :description, 'Description'
+  = text_field :material, 'description'
+
+  = label :material, :disposition, 'Disposition'
+  = select :material, :disposition, Material.all_dispositions 
+
+  = submit_tag 'Save Changes'

@@ -1,0 +1,16 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing Catalog
+
+= form_tag catalog_path(@catalog), :method => :put do
+
+  = label :catalog, :partnumber, 'Part Number'
+  = text_field :catalog, 'partnumber'
+
+  = label :catalog, :material_id, 'Material'
+  = collection_select(:catalog, :material_id, Material.all, :id, :description, :prompt => true)
+
+  = label :catalog, :vendor_id, 'Vendor'
+  = collection_select(:catalog, :vendor_id, Vendor.all, :id, :name, :prompt => true)
+
+  = submit_tag 'Update Catalog Info'

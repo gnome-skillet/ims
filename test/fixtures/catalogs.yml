@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  partnumber: MyString
+  count: 1
+  amount_per_container: 1.5
+  unit: MyString
+  vendor_id: 
+  material_id: 
+
+two:
+  partnumber: MyString
+  count: 1
+  amount_per_container: 1.5
+  unit: MyString
+  vendor_id: 
+  material_id: 

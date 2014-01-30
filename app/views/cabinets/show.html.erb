@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @cabinet.number %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @cabinet.temperature %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @cabinet.Room %>
+</p>
+
+<%= link_to 'Edit', edit_cabinet_path(@cabinet) %> |
+<%= link_to 'Back', cabinets_path %>
