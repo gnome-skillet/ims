@@ -1,11 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The IMS is a generic Inventory Management System. It is intended to track the lots of materials.
 
 Things you may want to cover:
 
 * Ruby version
+
+* Rails version 4.0
 
 * System dependencies
 
