@@ -16,7 +16,7 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite - unit tests: bundle exec rspec, integration tests: bundle exec cucumber
+* How to run the test suite - unit tests: <tt>bundle exec rspec</tt>, integration tests: <tt>bundle exec cucumber</tt>.
 
 * Services (job queues, cache servers, search engines, etc.)
 
