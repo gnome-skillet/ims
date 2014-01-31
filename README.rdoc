@@ -1,21 +1,22 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The IMS is a generic Inventory Management System. It is intended to track the lots of materials.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 1.9.3
+
+* Rails version 4.0
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation bundle exec db:test:prepare
 
 * Database initialization
 
-* How to run the test suite
+* How to run the test suite - unit tests: <tt>bundle exec rspec</tt>, integration tests: <tt>bundle exec cucumber</tt>.
 
 * Services (job queues, cache servers, search engines, etc.)
 
