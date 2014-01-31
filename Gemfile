@@ -29,6 +29,11 @@ group :assets do
   gem 'therubyracer', platforms: :ruby
 end
 
+group :production do
+  gem 'pg'
+end
+
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
 # Use jquery as the JavaScript library
