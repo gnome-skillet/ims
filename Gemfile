@@ -7,7 +7,6 @@ gem 'rails', '4.0.0.rc2'
 group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
-  gem 'database_cleaner'
   gem 'launchy'
   gem 'capybara'
 end
