@@ -1,4 +1,5 @@
 Sims::Application.routes.draw do
+  get "welcome/index"
   resources :shelves
 
   resources :cabinets
@@ -24,6 +25,7 @@ Sims::Application.routes.draw do
       resources :intermediates
   end
 
+  root "welcome#index"
   # Example resource route with options:
   #   resources :products do
   #     member do
