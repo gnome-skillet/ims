@@ -1,5 +1,6 @@
 class Material < ActiveRecord::Base
 	has_many :catalogs
+  accepts_nested_attributes_for :catalogs
   has_many :intermediates
   has_one :bill_of_materials
   has_many :bill_of_materials, :through => :intermediates

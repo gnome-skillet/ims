@@ -5,7 +5,7 @@ class BillOfMaterialsController < ApplicationController
   end
 
   def create
-    @bill_of_material = BillOfMaterial.new(params)
+    @bill_of_material = BillOfMaterial.new(bom_params)
 
     if @bill_of_material.save
       redirect_to @bill_of_material, notice: '#{@bill_of_material.material.description} BOM successfully created.'
@@ -16,7 +16,7 @@ class BillOfMaterialsController < ApplicationController
 
   def update
     @bill_of_material.update_attributes!(params)
-    flash[:notice] = "#{@bill_of_material.material.description} BOM successfully updated."
+    flash[:notice] = "#{@bill_of_material.material_description} BOM successfully updated."
     redirect_to bill_of_materials_path(@bill_of_material)
   end
 
@@ -41,6 +41,10 @@ class BillOfMaterialsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bill_of_material
       @bill_of_material = BillOfMaterial.find(params[:id])
+    end
+
+    def bom_params
+      params.require(:bill_of_material).permit(:material_id)
     end
 
 end

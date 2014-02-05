@@ -6,11 +6,14 @@
 
   = label :material, :smn, 'Material Number'
   = text_field :material, 'smn'
+  <br/>
 
   = label :material, :description, 'Description'
   = text_field :material, :description
+  <br/>
 
   = label :material, :disposition, 'Disposition'
   = select :material, :disposition, Material.all_dispositions 
+  <br/>
 
   = submit_tag 'Update Material Info'
