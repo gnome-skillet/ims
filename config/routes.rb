@@ -13,11 +13,11 @@ Sims::Application.routes.draw do
 
   resources :orders
 
-  resources :catalogs
 
   resources :vendors
 
   resources :materials do
+      resources :catalogs
   end
 
   resources :bill_of_materials do
