@@ -15,9 +15,9 @@
         %td= catalog.material_description
         %td= catalog.count
         %td= link_to "#{catalog.vendor_name}", vendors_path{catalog.vendor_id}
-        %td= link_to 'Show', catalog
-        %td= link_to 'Edit', edit_catalog_path(catalog)
-        %td= link_to 'Delete', catalog, method: :delete, data: {confirm: 'Are you sure?'}
+        %td= link_to 'Show', [@material,catalog]
+        %td= link_to 'Edit', edit_material_catalog_path(@material,catalog)
+        %td= link_to 'Delete', [@material,catalog], method: :delete, data: {confirm: 'Are you sure?'}
 
-= link_to 'Add new Catalog', new_catalog_path
+= link_to 'Add new Catalog', new_material_catalog_path(@material)
 

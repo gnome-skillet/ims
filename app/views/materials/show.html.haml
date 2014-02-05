@@ -26,7 +26,10 @@
         
         %td= catalog.count
 
-= link_to 'Catalog', catalogs_path
+= link_to 'Catalog', material_catalogs_path(@material)
+<br/>
 = link_to 'Edit', edit_material_path(@material)
+<br/>
 = button_to 'Delete', material_path(@material), :method => :delete, :confirm => 'Are you sure?'
+<br/>
 = link_to 'Back to material list', materials_path

@@ -1,6 +1,6 @@
 %h1 Create New Catalog
 
-= form_tag catalogs_path do
+= form_tag material_catalogs_path do
 
   = label :catalog, :partnumber, 'Part Number'
   = text_field :catalog, 'partnumber'
@@ -10,8 +10,5 @@
 
   = label :catalog, :vendor_id, 'Vendor'
   = select :catalog, :vendor_id, options_from_collection_for_select(Vendor.all, :id, :name)
-
-  = label :catalog, :material_id, 'Material Number'
-  = select :catalog, :material_id, options_from_collection_for_select(Material.all, :id, :description)
 
   = submit_tag 'Save Changes'

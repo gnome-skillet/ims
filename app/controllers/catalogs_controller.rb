@@ -1,13 +1,13 @@
 class CatalogsController < ApplicationController
   before_action :set_catalog, only: [:show, :edit, :update, :destroy]
-  before_action :get_material, only: [:new, :index, :show, :edit, :update, :destroy]
+  before_action :get_material, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
   def index
     @catalogs = @material.catalogs
   end
 
   def show
-    @catalog = @material.catalogs.find(params)
+    @catalog = @material.catalogs.find(catalog_params)
   end
 
   def new
