@@ -7,7 +7,7 @@ Given /^the following vendors exist:/ do |vendors_table|
 end
 
 When /^I add a vendor$/ do
-  Factory(:vendor)
+  flunk "unimplmented" 
 end 
 
 Then /I should see all the vendors/ do
