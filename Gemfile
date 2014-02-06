@@ -5,7 +5,7 @@ ruby '1.9.3'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'pg'
+  gem 'sqlite3'
   gem 'debugger'
   gem 'launchy'
   gem 'capybara'
@@ -36,6 +36,7 @@ end
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
