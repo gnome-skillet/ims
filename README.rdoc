@@ -2,6 +2,18 @@
 
 The IMS is a generic Inventory Management System. It is intended to track the lots of materials.
 
+To Install:
+<tt>git clone https://github.com/boredagainpiston/ims.git </tt>
+<tt>cd sims</tt>
+<tt>bundle install --without production</tt>
+<tt>rails generate rspec:install</tt>
+<tt>rails generate rspec:install</tt>
+<tt>rails generate cucumber:install</tt>
+<tt>bundle exec rake test prepare</tt>
+<tt>bundle exec rake db:seed</tt>
+<tt>rails server</tt>
+
+
 Things you may want to cover:
 
 * Ruby version 1.9.3
