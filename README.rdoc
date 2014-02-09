@@ -3,6 +3,11 @@
 The IMS is a generic Inventory Management System. It is intended to track the lots of materials.
 
 To Install:
+
+For a mac, I strongly suggest installing rbenv and performing the following command:
+
+<tt>rbenv local 2.0.0-p353</tt>
+
 <tt>git clone https://github.com/boredagainpiston/ims.git </tt>
 
 <tt>cd sims</tt>
