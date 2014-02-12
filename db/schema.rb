@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "updated_at"
   end
 
-  add_index "bill_of_materials", ["material_id"], name: "index_bill_of_materials_on_material_id", using: :btree
+  add_index "bill_of_materials", ["material_id"], name: "index_bill_of_materials_on_material_id"
 
   create_table "cabinets", force: true do |t|
     t.string   "number"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "updated_at"
   end
 
-  add_index "cabinets", ["Room_id"], name: "index_cabinets_on_Room_id", using: :btree
+  add_index "cabinets", ["Room_id"], name: "index_cabinets_on_Room_id"
 
   create_table "catalogs", force: true do |t|
     t.string   "partnumber"
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "updated_at"
   end
 
-  add_index "catalogs", ["material_id"], name: "index_catalogs_on_material_id", using: :btree
-  add_index "catalogs", ["vendor_id"], name: "index_catalogs_on_vendor_id", using: :btree
+  add_index "catalogs", ["material_id"], name: "index_catalogs_on_material_id"
+  add_index "catalogs", ["vendor_id"], name: "index_catalogs_on_vendor_id"
 
   create_table "dispositions", force: true do |t|
     t.string   "name"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "updated_at"
   end
 
-  add_index "intermediates", ["bill_of_material_id"], name: "index_intermediates_on_bill_of_material_id", using: :btree
-  add_index "intermediates", ["material_id"], name: "index_intermediates_on_material_id", using: :btree
+  add_index "intermediates", ["bill_of_material_id"], name: "index_intermediates_on_bill_of_material_id"
+  add_index "intermediates", ["material_id"], name: "index_intermediates_on_material_id"
 
   create_table "materials", force: true do |t|
     t.string   "description"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "updated_at"
   end
 
-  add_index "orders", ["catalog_id"], name: "index_orders_on_catalog_id", using: :btree
+  add_index "orders", ["catalog_id"], name: "index_orders_on_catalog_id"
 
   create_table "rooms", force: true do |t|
     t.string   "number"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "updated_at"
   end
 
-  add_index "rooms", ["Address_id"], name: "index_rooms_on_Address_id", using: :btree
+  add_index "rooms", ["Address_id"], name: "index_rooms_on_Address_id"
 
   create_table "shelves", force: true do |t|
     t.string   "number"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "updated_at"
   end
 
-  add_index "shelves", ["Cabinet_id"], name: "index_shelves_on_Cabinet_id", using: :btree
+  add_index "shelves", ["Cabinet_id"], name: "index_shelves_on_Cabinet_id"
 
   create_table "users", force: true do |t|
     t.string   "first"
