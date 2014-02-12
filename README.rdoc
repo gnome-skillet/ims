@@ -23,6 +23,7 @@ For a mac, I strongly suggest installing rbenv and performing the following comm
 <tt>bundle exec rake test prepare</tt>
 
 <tt>bundle exec rake db:seed</tt>
+<tt>bundle exec rake db:migrate</tt>
 
 <tt>rails server</tt>
 
