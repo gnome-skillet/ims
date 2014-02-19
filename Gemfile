@@ -37,6 +37,7 @@ end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+gem 'bundler-audit'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
