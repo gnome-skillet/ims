@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe.intermediates.delete_all
+    @recipe.ingredients.delete_all
     @recipe.destroy
     redirect_to recipes_url
   end
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    params.permit(:intermediate)
+    params.permit(:ingredient)
   end
 
     private

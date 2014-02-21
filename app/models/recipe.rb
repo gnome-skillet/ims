@@ -1,8 +1,8 @@
 class Recipe < ActiveRecord::Base
-  has_many :intermediates
-  has_many :materials, :through => :intermediates
+  has_many :ingredients
+  has_many :materials, :through => :ingredients
   belongs_to :material
-  accepts_nested_attributes_for :intermediates
+  accepts_nested_attributes_for :ingredients
 
   def material_id
     if self.material != nil

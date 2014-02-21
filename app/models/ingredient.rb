@@ -1,4 +1,4 @@
-class Intermediate < ActiveRecord::Base
+class Ingredient < ActiveRecord::Base
   belongs_to :recipe
   belongs_to :material
   validates_presence_of :material, :recipe
@@ -23,7 +23,7 @@ class Intermediate < ActiveRecord::Base
     if self.material != nil and self.recipe != nil
       self.recipe_description+":"+self.material_description
     else 
-      "Invalid Intermediate"
+      "Invalid Ingredient"
     end
   end
 

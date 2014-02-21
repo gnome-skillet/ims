@@ -1,0 +1,17 @@
+%h1 Create New Ingredient
+
+= form_tag recipe_ingredients_path do
+
+  = label :ingredient, :recipe_id, 'Final Product'
+  = select :ingredient, :recipe_id, options_from_collection_for_select(Recipe.all, :id, :material_description), :selected => params[:recipe_id]
+
+  = label :ingredient, :material_id, 'Material Number'
+  = select :ingredient, :material_id, options_from_collection_for_select(Material.all, :id, :description), :prompt => "select one"
+
+  = label :ingredient, :units, 'Units of Measure'
+  = text_field :ingredient, 'units' 
+
+  = label :ingredient, :amount, 'Required Amount'
+  = number_field :ingredient, 'amount' 
+
+  = submit_tag 'Save Changes'

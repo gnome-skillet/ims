@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140220074041) do
     t.datetime "updated_at"
   end
 
-  create_table "intermediates", force: true do |t|
+  create_table "ingredients", force: true do |t|
     t.string   "units"
     t.float    "amount"
     t.integer  "recipe_id"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20140220074041) do
     t.datetime "updated_at"
   end
 
-  add_index "intermediates", ["recipe_id"], name: "index_intermediates_on_recipe_id"
-  add_index "intermediates", ["material_id"], name: "index_intermediates_on_material_id"
+  add_index "ingredients", ["recipe_id"], name: "index_ingredients_on_recipe_id"
+  add_index "ingredients", ["material_id"], name: "index_ingredients_on_material_id"
 
   create_table "materials", force: true do |t|
     t.string   "description"

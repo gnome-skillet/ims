@@ -10,21 +10,21 @@
     Material Number:
     = @recipe.material.smn
 
-%table#recipe.intermediates
+%table#recipe.ingredients
   %thead
     %tr
       %th Description 
       %th Units 
       %th Amount 
   %tbody
-    - @recipe.intermediates.each do |intermediate|
+    - @recipe.ingredients.each do |ingredient|
       %tr
-        %td= intermediate.material_description 
-        %td= intermediate.units
-        %td= intermediate.amount
-        %td= link_to 'Delete', recipe_intermediate_path(@recipe,intermediate), :method => :delete, :confirm => 'Are you sure?'
+        %td= ingredient.material_description 
+        %td= ingredient.units
+        %td= ingredient.amount
+        %td= link_to 'Delete', recipe_ingredient_path(@recipe,ingredient), :method => :delete, :confirm => 'Are you sure?'
 
-= link_to 'Add Intermediate', new_recipe_intermediate_path(@recipe)
+= link_to 'Add Ingredient', new_recipe_ingredient_path(@recipe)
 <br/>
 = link_to 'Catalog', catalogs_path
 <br/>

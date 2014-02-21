@@ -1,6 +1,6 @@
-class CreateIntermediates < ActiveRecord::Migration
+class CreateIngredients < ActiveRecord::Migration
   def change
-    create_table :intermediates do |t|
+    create_table :ingredients do |t|
       t.string :units
       t.float :amount
       t.references :recipe, index: true
