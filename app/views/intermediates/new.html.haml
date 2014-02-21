@@ -1,9 +1,9 @@
 %h1 Create New Intermediate
 
-= form_tag bill_of_material_intermediates_path do
+= form_tag recipe_intermediates_path do
 
-  = label :intermediate, :bill_of_material_id, 'Final Product'
-  = select :intermediate, :bill_of_material_id, options_from_collection_for_select(BillOfMaterial.all, :id, :material_description), :selected => params[:bill_of_material_id]
+  = label :intermediate, :recipe_id, 'Final Product'
+  = select :intermediate, :recipe_id, options_from_collection_for_select(Recipe.all, :id, :material_description), :selected => params[:recipe_id]
 
   = label :intermediate, :material_id, 'Material Number'
   = select :intermediate, :material_id, options_from_collection_for_select(Material.all, :id, :description), :prompt => "select one"

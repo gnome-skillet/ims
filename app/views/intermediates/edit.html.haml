@@ -2,7 +2,7 @@
 
 %h1 Edit Existing Intermediate
 
-= form_tag bill_of_material_intermediate_path(@bill_of_material,@intermediate), :method => :put do
+= form_tag recipe_intermediate_path(@recipe,@intermediate), :method => :put do
 
   = label :intermediate, :material_id, 'Material Number'
   = collection_select(:intermediate, :material_id, Material.all, :id, :description, :prompt => true)

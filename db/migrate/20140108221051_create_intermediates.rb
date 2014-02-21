@@ -3,7 +3,7 @@ class CreateIntermediates < ActiveRecord::Migration
     create_table :intermediates do |t|
       t.string :units
       t.float :amount
-      t.references :bill_of_material, index: true
+      t.references :recipe, index: true
       t.references :material, index: true
 
       t.timestamps

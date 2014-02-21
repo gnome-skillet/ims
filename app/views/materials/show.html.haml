@@ -30,6 +30,6 @@
 <br/>
 = link_to 'Edit', edit_material_path(@material)
 <br/>
-= button_to 'Delete', material_path(@material), :method => :delete, :confirm => 'Are you sure?'
+= button_to 'Delete', material_path(@material), :method => :delete, :data => {confirm:'Are you sure?'}
 <br/>
 = link_to 'Back to material list', materials_path

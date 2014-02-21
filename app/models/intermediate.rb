@@ -1,13 +1,13 @@
 class Intermediate < ActiveRecord::Base
-  belongs_to :bill_of_material
+  belongs_to :recipe
   belongs_to :material
-  validates_presence_of :material, :bill_of_material
+  validates_presence_of :material, :recipe
 
-  def bill_of_material_description
+  def recipe_description
     if self.material != nil
-      self.bill_of_material.material_description
+      self.recipe.material_description
     else 
-      "Unknown Bill of Material"
+      "Unknown Recipe"
     end
   end
 
@@ -20,8 +20,8 @@ class Intermediate < ActiveRecord::Base
   end
 
   def description
-    if self.material != nil and self.bill_of_material != nil
-      self.bill_of_material_description+":"+self.material_description
+    if self.material != nil and self.recipe != nil
+      self.recipe_description+":"+self.material_description
     else 
       "Invalid Intermediate"
     end

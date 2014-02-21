@@ -1,10 +1,10 @@
-<%= form_for(@bill_of_material) do |f| %>
-  <% if @bill_of_material.errors.any? %>
+<%= form_for(@recipe) do |f| %>
+  <% if @recipe.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@bill_of_material.errors.count, "error") %> prohibited this bill_of_material from being saved:</h2>
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
       <ul>
-      <% @bill_of_material.errors.full_messages.each do |msg| %>
+      <% @recipe.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

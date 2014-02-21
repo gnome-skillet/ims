@@ -2,9 +2,9 @@ class Material < ActiveRecord::Base
 	has_many :catalogs
   accepts_nested_attributes_for :catalogs
   has_many :intermediates
-  has_one :bill_of_materials
-  has_many :bill_of_materials, :through => :intermediates
-  #has_one :recipe, :class_name => "BillOfMaterial", :foreign_key => "bill_of_material_id"
+  has_one :recipes
+  has_many :recipes, :through => :intermediates
+  #has_one :recipe, :class_name => "Recipe", :foreign_key => "recipe_id"
 
 	validates :description, :smn, :disposition, presence: true
 	validates :smn, uniqueness: true

@@ -1,47 +1,47 @@
 class IntermediatesController < ApplicationController
-  before_filter :get_bill_of_material
+  before_filter :get_recipe
 
-  def get_bill_of_material
-    @bill_of_material = BillOfMaterial.find(params[:bill_of_material_id])
+  def get_recipe
+    @recipe = Recipe.find(params[:recipe_id])
   end
 
   def show
-    @intermediate = @bill_of_material.intermediates.find(params[:id]) 
+    @intermediate = @recipe.intermediates.find(params[:id]) 
   end
 
   def index
-    @intermediates = @bill_of_material.intermediates 
+    @intermediates = @recipe.intermediates 
   end
 
   def new
   end
 
   def create
-    @intermediate = @bill_of_material.intermediates.build(intermediate_params)
+    @intermediate = @recipe.intermediates.build(intermediate_params)
 
     if @intermediate.save
-      redirect_to bill_of_materials_path(@bill_of_material), notice: "Intermediate #{@intermediate.material_description} added to BOM for #{@bill_of_material.description}."
+      redirect_to recipes_path(@recipe), notice: "Intermediate #{@intermediate.material_description} added to Recipe for #{@recipe.description}."
     else
       render action: 'new'
     end
   end
 
   def update
-    @intermediate = @bill_of_material.intermediates.find(params[:id]) 
+    @intermediate = @recipe.intermediates.find(params[:id]) 
     @intermediate.update_attributes!(params[:intermediate])
     flash[:notice] = "#{@intermediate.description} successfully updated."
-    redirect_to bill_of_materials_path(@bill_of_material)
+    redirect_to recipes_path(@recipe)
   end
 
   def edit
-    @intermediate = @bill_of_material.intermediates.find(params[:id]) 
+    @intermediate = @recipe.intermediates.find(params[:id]) 
   end
 
   def destroy
-    @intermediate = @bill_of_material.intermediates.find(intermediate_params) 
+    @intermediate = @recipe.intermediates.find(intermediate_params) 
     @intermediate.destroy
-    flash[:notice] = "Intermediate removed from BOM for #{@bill_of_material.material_description}"
-    redirect_to bill_of_materials_path(@bill_of_material)
+    flash[:notice] = "Intermediate removed from Recipe for #{@recipe.material_description}"
+    redirect_to recipes_path(@recipe)
   end
 
   def material_description
@@ -49,8 +49,8 @@ class IntermediatesController < ApplicationController
 
   private 
   def intermediate_params
-      params.require(:bill_of_material_id)
-      params.require(:intermediate).permit(:bill_of_material_id, :material_id, :units, :amount)
+      params.require(:recipe_id)
+      params.require(:intermediate).permit(:recipe_id, :material_id, :units, :amount)
   end
 
 end

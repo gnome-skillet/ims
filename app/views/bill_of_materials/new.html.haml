@@ -1,8 +1,0 @@
-%h1 Create New BOM
-
-= form_tag bill_of_materials_path do
-
-  = label :bill_of_material, :material_id, 'Material'
-  = select :bill_of_material, :material_id, options_from_collection_for_select(Material.all, :id, :description)
-
-  = submit_tag 'Save Changes'

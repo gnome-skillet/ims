@@ -1,0 +1,8 @@
+%h1 Create New BOM
+
+= form_tag recipes_path do
+
+  = label :recipe, :material_id, 'Material'
+  = select :recipe, :material_id, options_from_collection_for_select(Material.all, :id, :description)
+
+  = submit_tag 'Save Changes'

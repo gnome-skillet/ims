@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115004427) do
+ActiveRecord::Schema.define(version: 20140220074041) do
 
   create_table "addresses", force: true do |t|
     t.string   "country"
@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 20140115004427) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "bill_of_materials", force: true do |t|
-    t.integer  "parent_material_id"
-    t.integer  "material_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "bill_of_materials", ["material_id"], name: "index_bill_of_materials_on_material_id"
 
   create_table "cabinets", force: true do |t|
     t.string   "number"
@@ -66,13 +57,13 @@ ActiveRecord::Schema.define(version: 20140115004427) do
   create_table "intermediates", force: true do |t|
     t.string   "units"
     t.float    "amount"
-    t.integer  "bill_of_material_id"
+    t.integer  "recipe_id"
     t.integer  "material_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "intermediates", ["bill_of_material_id"], name: "index_intermediates_on_bill_of_material_id"
+  add_index "intermediates", ["recipe_id"], name: "index_intermediates_on_recipe_id"
   add_index "intermediates", ["material_id"], name: "index_intermediates_on_material_id"
 
   create_table "materials", force: true do |t|
@@ -91,6 +82,15 @@ ActiveRecord::Schema.define(version: 20140115004427) do
   end
 
   add_index "orders", ["catalog_id"], name: "index_orders_on_catalog_id"
+
+  create_table "recipes", force: true do |t|
+    t.integer  "parent_material_id"
+    t.integer  "material_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recipes", ["material_id"], name: "index_recipes_on_material_id"
 
   create_table "rooms", force: true do |t|
     t.string   "number"

@@ -21,7 +21,7 @@ Sims::Application.routes.draw do
       resources :catalogs
   end
 
-  resources :bill_of_materials do
+  resources :recipes do
       resources :intermediates
   end
 

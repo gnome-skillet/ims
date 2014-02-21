@@ -17,6 +17,7 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0', require: false
   gem 'shoulda'
+  gem 'simplecov', :require => false
   gem 'database_cleaner'
 end
 

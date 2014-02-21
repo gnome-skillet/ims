@@ -1,6 +1,6 @@
-class CreateBillOfMaterials < ActiveRecord::Migration
+class CreateRecipes < ActiveRecord::Migration
   def change
-    create_table :bill_of_materials do |t|
+    create_table :recipes do |t|
       t.integer :parent_material_id
       t.references :material, index: true
       t.timestamps

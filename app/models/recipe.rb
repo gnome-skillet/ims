@@ -1,4 +1,4 @@
-class BillOfMaterial < ActiveRecord::Base
+class Recipe < ActiveRecord::Base
   has_many :intermediates
   has_many :materials, :through => :intermediates
   belongs_to :material

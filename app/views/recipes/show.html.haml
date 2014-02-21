@@ -1,0 +1,35 @@
+-# in app/views/recipes/show.html.haml
+
+%h2 Recipes: #{@recipe.material_description}
+
+%ul#details
+  %li
+    Material Description:
+    = link_to "#{@recipe.material_description}", material_path(@recipe.material_id)
+  %li
+    Material Number:
+    = @recipe.material.smn
+
+%table#recipe.intermediates
+  %thead
+    %tr
+      %th Description 
+      %th Units 
+      %th Amount 
+  %tbody
+    - @recipe.intermediates.each do |intermediate|
+      %tr
+        %td= intermediate.material_description 
+        %td= intermediate.units
+        %td= intermediate.amount
+        %td= link_to 'Delete', recipe_intermediate_path(@recipe,intermediate), :method => :delete, :confirm => 'Are you sure?'
+
+= link_to 'Add Intermediate', new_recipe_intermediate_path(@recipe)
+<br/>
+= link_to 'Catalog', catalogs_path
+<br/>
+= link_to 'Edit', edit_recipe_path(@recipe)
+<br/>
+= button_to 'Delete', recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?'
+<br/>
+= link_to 'Back to recipe list', recipes_path
